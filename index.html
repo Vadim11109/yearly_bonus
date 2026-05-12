@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Годовая премия — Sminex ИТ</title>
+<title>Механизмы премирования ИТ — Sminex</title>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -166,13 +166,14 @@ hr{border:none;border-top:0.5px solid var(--border);margin:12px 0;}
 
 <header>
   <div class="header-brand">Sminex &nbsp;·&nbsp; ИТ Департамент</div>
-  <h1>Годовая премия</h1>
-  <p>Концепция и механизм расчёта с учётом специфики девелоперского бизнеса</p>
+  <h1>Механизмы премирования ИТ</h1>
+  <p>Годовая и квартальная премии — концепция и механизм расчёта</p>
 </header>
 
 <div class="tabs">
-  <button class="tab active" onclick="showTab('system',this)">Система</button>
-  <button class="tab" onclick="showTab('calc',this)">Калькулятор</button>
+  <button class="tab active" onclick="showTab('system',this)">Годовая: система</button>
+  <button class="tab" onclick="showTab('calc',this)">Годовая: калькулятор</button>
+  <button class="tab" onclick="showTab('quarterly',this)">Квартальная</button>
   <button class="tab" onclick="showTab('scales',this)">Шкалы</button>
 </div>
 
@@ -332,6 +333,156 @@ hr{border:none;border-top:0.5px solid var(--border);margin:12px 0;}
 
 </div>
 
+<!-- ═══ TAB: QUARTERLY ═══ -->
+<div id="tab-quarterly" class="tab-panel">
+
+  <div class="section-label">Формула расчёта</div>
+  <div class="formula-wrap">
+    <div class="formula-row">
+      <div class="f-box f-neutral">Целевой бонус</div>
+      <span class="f-op">×</span>
+      <div class="f-box f-gold">К&thinsp;(бизнес Q)</div>
+      <span class="f-op">×</span>
+      <div class="f-box f-green">К&thinsp;(ит-блок Q)</div>
+      <span class="f-op">×</span>
+      <div class="f-box f-dark">К&thinsp;(личный Q)</div>
+      <span class="f-op">=</span>
+      <div class="f-box f-result">Квартальная премия</div>
+    </div>
+  </div>
+
+  <div class="k-grid">
+    <div class="k-block k-biz">
+      <div class="k-weight">Вес 25%</div>
+      <div class="k-title">К (бизнес Q)</div>
+      <div class="k-sub">Квартальный результат компании</div>
+      <div class="sm"><div class="sm-label"><span>Выполнение квартального плана продаж</span><span>60%</span></div><div class="bar-bg"><div class="bar-fill" style="width:60%"></div></div></div>
+      <div class="sm"><div class="sm-label"><span>Ввод объектов по кварталу</span><span>40%</span></div><div class="bar-bg"><div class="bar-fill" style="width:40%"></div></div></div>
+    </div>
+    <div class="k-block k-team">
+      <div class="k-weight">Вес 40%</div>
+      <div class="k-title">К (ит-блок Q)</div>
+      <div class="k-sub">Квартальный результат ИТ</div>
+      <div class="sm"><div class="sm-label"><span>Выполнение задач квартала</span><span>40%</span></div><div class="bar-bg"><div class="bar-fill" style="width:40%"></div></div></div>
+      <div class="sm"><div class="sm-label"><span>Uptime критичных систем</span><span>35%</span></div><div class="bar-bg"><div class="bar-fill" style="width:35%"></div></div></div>
+      <div class="sm"><div class="sm-label"><span>Удовлетворённость заказчиков</span><span>25%</span></div><div class="bar-bg"><div class="bar-fill" style="width:25%"></div></div></div>
+    </div>
+    <div class="k-block k-pers">
+      <div class="k-weight">Вес 35%</div>
+      <div class="k-title">К (личный Q)</div>
+      <div class="k-sub">Личные результаты квартала</div>
+      <div class="sm"><div class="sm-label"><span>Закрытие задач по плану спринта</span><span>50%</span></div><div class="bar-bg"><div class="bar-fill" style="width:50%"></div></div></div>
+      <div class="sm"><div class="sm-label"><span>Качество и отсутствие переработок</span><span>30%</span></div><div class="bar-bg"><div class="bar-fill" style="width:30%"></div></div></div>
+      <div class="sm"><div class="sm-label"><span>Взаимодействие с командой</span><span>20%</span></div><div class="bar-bg"><div class="bar-fill" style="width:20%"></div></div></div>
+    </div>
+  </div>
+
+  <div class="section-label">Условия выплаты</div>
+  <div class="card" style="margin-bottom:1.5rem;">
+    <div class="cond-list">
+      <div class="cond-item"><div class="cond-dot"></div><span>Отработано ≥ 2 месяцев в квартале</span></div>
+      <div class="cond-item"><div class="cond-dot"></div><span>Нет дисциплинарных взысканий в квартале</span></div>
+      <div class="cond-item"><div class="cond-dot"></div><span>Оценка К(личный Q) > 0</span></div>
+    </div>
+  </div>
+
+  <div class="section-label">Календарь квартала</div>
+  <div class="card" style="padding:0;overflow:hidden;margin-bottom:2rem;">
+    <div class="cal">
+      <div class="cal-step"><div class="cal-month">1-й месяц Q</div><div class="cal-desc">Фиксация задач, целей и KPI квартала</div></div>
+      <div class="cal-step"><div class="cal-month">2-й месяц Q</div><div class="cal-desc">Промежуточный check-in, коррекция целей</div></div>
+      <div class="cal-step"><div class="cal-month">3-й месяц Q</div><div class="cal-desc">Квартальный performance review</div></div>
+      <div class="cal-step"><div class="cal-month">1-й месяц след. Q</div><div class="cal-desc">Выплата квартальной премии</div></div>
+    </div>
+  </div>
+
+  <div class="section-label">Калькулятор</div>
+  <div class="row2" style="margin-bottom:12px;">
+    <div class="card" style="margin-bottom:0;">
+      <div class="section-label">Параметры сотрудника</div>
+      <div class="slider-row">
+        <span class="slider-lbl">Оклад (₽)</span>
+        <input type="range" id="q-salary" min="50000" max="500000" step="10000" value="150000" oninput="calcQ()">
+        <span class="slider-val" id="q-salary-out">150 000</span>
+      </div>
+      <div class="slider-row">
+        <span class="slider-lbl">Целевой бонус (окладов)</span>
+        <input type="range" id="q-months" min="0.25" max="1.5" step="0.25" value="0.75" oninput="calcQ()">
+        <span class="slider-val" id="q-months-out">0.75</span>
+      </div>
+      <div>
+        <div class="field-lbl">Личная оценка квартала</div>
+        <select id="q-personal" onchange="calcQ()">
+          <option value="1.2">Отлично — задачи перевыполнены</option>
+          <option value="1.0" selected>Хорошо — задачи выполнены</option>
+          <option value="0.85">Соответствует — выполнено 80–99%</option>
+          <option value="0.5">Ниже ожиданий — выполнено &lt;80%</option>
+          <option value="0">Unsatisfactory — бонуса нет</option>
+        </select>
+      </div>
+    </div>
+    <div class="card" style="margin-bottom:0;">
+      <div class="section-label">Коэффициенты квартала</div>
+      <div style="margin-bottom:14px;">
+        <div class="field-lbl">К (бизнес Q) — квартальный план компании</div>
+        <select id="q-kbiz" onchange="calcQ()">
+          <option value="1.2">≥ 110% плана → 1.2</option>
+          <option value="1.0" selected>100–109% → 1.0</option>
+          <option value="0.9">90–99% → 0.9</option>
+          <option value="0.7">80–89% → 0.7</option>
+          <option value="0.4">&lt; 80% → 0.4</option>
+        </select>
+      </div>
+      <div>
+        <div class="field-lbl">К (ит-блок Q) — результат ИТ за квартал</div>
+        <input type="range" id="q-kit" min="0.5" max="1.2" step="0.05" value="1.0" oninput="calcQ()" style="width:100%;margin-bottom:6px;">
+        <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--text3);">
+          <span>0.5 — слабый квартал</span>
+          <span id="q-kit-out" style="font-weight:600;color:var(--text);">1.0</span>
+          <span>1.2 — отличный квартал</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="section-label">Расчёт</div>
+    <div class="formula-row" style="margin-bottom:0;">
+      <div class="f-box f-neutral" id="qf-target">112 500 ₽</div>
+      <span class="f-op">×</span>
+      <div class="f-box f-gold" id="qf-biz">1.0</div>
+      <span class="f-op">×</span>
+      <div class="f-box f-green" id="qf-it">1.0</div>
+      <span class="f-op">×</span>
+      <div class="f-box f-dark" id="qf-pers">1.0</div>
+      <span class="f-op">=</span>
+    </div>
+    <div class="result-block">
+      <div>
+        <div class="result-lbl">Квартальная премия к выплате</div>
+        <div class="result-sub" id="q-result-sub">100% от целевого бонуса</div>
+      </div>
+      <div class="result-amount" id="q-result-amount">112 500 ₽</div>
+    </div>
+  </div>
+
+  <div class="metric-grid">
+    <div class="metric-card">
+      <div class="metric-lbl">Целевой бонус</div>
+      <div class="metric-val" id="qm-target">—</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-lbl">Итоговый коэффициент</div>
+      <div class="metric-val" id="qm-k">—</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-lbl">Выплат в год (×4)</div>
+      <div class="metric-val" id="qm-year">—</div>
+    </div>
+  </div>
+
+</div>
+
 <!-- ═══ TAB: SCALES ═══ -->
 <div id="tab-scales" class="tab-panel">
   <div class="row2">
@@ -452,6 +603,43 @@ function calc() {
 }
 
 calc();
+
+function calcQ() {
+  const salary = +document.getElementById('q-salary').value;
+  const months = +document.getElementById('q-months').value;
+  const kbiz   = +document.getElementById('q-kbiz').value;
+  const kit    = +document.getElementById('q-kit').value;
+  const kpers  = +document.getElementById('q-personal').value;
+
+  document.getElementById('q-salary-out').textContent = Math.round(salary).toLocaleString('ru-RU');
+  document.getElementById('q-months-out').textContent = months;
+  document.getElementById('q-kit-out').textContent    = kit.toFixed(2);
+
+  const target = salary * months;
+  const bonus  = target * kbiz * kit * kpers;
+  const totalK = (kbiz * kit * kpers).toFixed(2);
+  const pct    = Math.round((bonus / target) * 100);
+
+  document.getElementById('qf-target').textContent = fmt(target);
+  document.getElementById('qf-biz').textContent    = kbiz.toFixed(1);
+  document.getElementById('qf-it').textContent     = kit.toFixed(2);
+  document.getElementById('qf-pers').textContent   = kpers.toFixed(2);
+
+  if (kpers === 0) {
+    document.getElementById('q-result-amount').textContent = '0 ₽';
+    document.getElementById('q-result-sub').textContent    = 'Оценка Unsatisfactory — выплата не производится';
+    document.getElementById('qm-k').textContent            = '0×';
+    document.getElementById('qm-year').textContent         = '—';
+  } else {
+    document.getElementById('q-result-amount').textContent = fmt(bonus);
+    document.getElementById('q-result-sub').textContent    = pct + '% от целевого бонуса';
+    document.getElementById('qm-k').textContent            = totalK + '×';
+    document.getElementById('qm-year').textContent         = fmt(bonus * 4);
+  }
+  document.getElementById('qm-target').textContent = fmt(target);
+}
+
+calcQ();
 </script>
 </body>
 </html>
