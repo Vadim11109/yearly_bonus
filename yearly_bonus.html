@@ -3,120 +3,161 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Годовая премия ИТ-блока</title>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css"/>
+<title>Годовая премия — Sminex ИТ</title>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --bg:#ffffff;--bg2:#f5f4f0;--bg3:#eceae3;
-  --text:#1a1a1a;--text2:#6b6b67;--text3:#999890;
-  --border:rgba(0,0,0,0.1);--border2:rgba(0,0,0,0.18);
-  --rad:8px;--rad-lg:12px;
+  --bg:#EEEAE0;
+  --surface:#FFFFFF;
+  --surface2:#F5F2EB;
+  --text:#1A1A14;
+  --text2:#6B6B58;
+  --text3:#9E9A8E;
+  --border:rgba(0,0,0,0.09);
+  --border-strong:rgba(0,0,0,0.18);
+  --gold:#8B6914;
+  --gold-bg:#F5EDDA;
+  --gold-border:#D4B06A;
+  --green:#2D5A3D;
+  --green-bg:#E4EFE8;
+  --green-border:#7BAF8E;
+  --dark:#1A1A14;
+  --dark-bg:#EEEAE0;
+  --rad:6px;
+  --rad-lg:10px;
   --font:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-  --blue-bg:#E6F1FB;--blue-mid:#185FA5;--blue-dark:#042C53;--blue-border:#B5D4F4;
-  --green-bg:#E1F5EE;--green-mid:#0F6E56;--green-dark:#04342C;--green-border:#9FE1CB;
-  --purple-bg:#EEEDFE;--purple-mid:#534AB7;--purple-dark:#26215C;--purple-border:#CECBF6;
-  --amber-bg:#FAEEDA;--amber-mid:#854F0B;--amber-border:#FAC775;
 }
-body{font-family:var(--font);background:var(--bg2);color:var(--text);min-height:100vh;padding:2rem 1rem;}
-.wrap{max-width:840px;margin:0 auto;}
-header{margin-bottom:2rem;}
-header h1{font-size:22px;font-weight:500;margin-bottom:4px;}
-header p{font-size:14px;color:var(--text2);}
+body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:100vh;padding:0 1rem 4rem;}
+.wrap{max-width:860px;margin:0 auto;}
 
-.tabs{display:flex;gap:4px;margin-bottom:1.25rem;}
-.tab{padding:6px 16px;border-radius:var(--rad);font-size:13px;cursor:pointer;border:0.5px solid var(--border);background:transparent;color:var(--text2);font-family:var(--font);transition:all .15s;}
-.tab:hover{background:var(--bg);}
-.tab.active{background:var(--bg);color:var(--text);font-weight:500;border-color:var(--border2);}
+/* ── header ── */
+header{text-align:center;padding:3rem 0 2.5rem;border-bottom:0.5px solid var(--border);margin-bottom:2.5rem;}
+.header-brand{font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--text3);margin-bottom:1rem;}
+header h1{font-size:42px;font-weight:700;letter-spacing:-.02em;line-height:1.1;margin-bottom:.75rem;color:var(--text);}
+header p{font-size:14px;color:var(--text2);max-width:480px;margin:0 auto;}
+
+/* ── tabs ── */
+.tabs{display:flex;gap:6px;margin-bottom:2rem;}
+.tab{padding:6px 18px;border-radius:var(--rad);font-size:12px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;cursor:pointer;border:0.5px solid var(--border-strong);background:transparent;color:var(--text2);font-family:var(--font);transition:all .15s;}
+.tab:hover{background:var(--surface);color:var(--text);}
+.tab.active{background:var(--text);color:#FFFFFF;border-color:var(--text);}
 .tab-panel{display:none;}.tab-panel.active{display:block;}
 
-.card{background:var(--bg);border:0.5px solid var(--border);border-radius:var(--rad-lg);padding:1rem 1.25rem;margin-bottom:1rem;}
-.section-label{font-size:11px;font-weight:500;color:var(--text3);text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px;}
+/* ── section label ── */
+.section-label{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);margin-bottom:12px;}
 
-/* k-blocks */
-.k-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-bottom:1.25rem;}
-.k-block{border-radius:var(--rad-lg);padding:1rem 1.1rem;border:0.5px solid;}
-.k-biz{background:var(--blue-bg);border-color:var(--blue-border);}
-.k-team{background:var(--green-bg);border-color:var(--green-border);}
-.k-pers{background:var(--purple-bg);border-color:var(--purple-border);}
-.k-weight{display:inline-block;font-size:11px;font-weight:500;padding:2px 9px;border-radius:20px;margin-bottom:8px;}
-.k-biz .k-weight{background:var(--blue-border);color:#0C447C;}
-.k-team .k-weight{background:var(--green-border);color:#085041;}
-.k-pers .k-weight{background:var(--purple-border);color:#3C3489;}
-.k-title{font-size:14px;font-weight:500;margin-bottom:2px;}
-.k-biz .k-title{color:#0C447C;}.k-team .k-title{color:#085041;}.k-pers .k-title{color:#3C3489;}
-.k-sub{font-size:12px;margin-bottom:10px;}
-.k-biz .k-sub{color:var(--blue-mid);}.k-team .k-sub{color:var(--green-mid);}.k-pers .k-sub{color:var(--purple-mid);}
+/* ── card ── */
+.card{background:var(--surface);border:0.5px solid var(--border);border-radius:var(--rad-lg);padding:1.25rem 1.5rem;margin-bottom:1rem;}
 
-/* sub metrics bars */
+/* ── k-blocks ── */
+.k-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-bottom:1.5rem;}
+.k-block{background:var(--surface);border-radius:var(--rad-lg);padding:1.1rem 1.25rem;border:0.5px solid var(--border);border-left:3px solid;}
+.k-biz{border-left-color:var(--gold);}
+.k-team{border-left-color:var(--green);}
+.k-pers{border-left-color:var(--dark);}
+.k-weight{display:inline-block;font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:2px 8px;border-radius:20px;margin-bottom:10px;}
+.k-biz .k-weight{background:var(--gold-bg);color:var(--gold);border:0.5px solid var(--gold-border);}
+.k-team .k-weight{background:var(--green-bg);color:var(--green);border:0.5px solid var(--green-border);}
+.k-pers .k-weight{background:#E8E8E2;color:#3A3A30;border:0.5px solid #C0BEB2;}
+.k-title{font-size:14px;font-weight:600;margin-bottom:2px;color:var(--text);}
+.k-sub{font-size:12px;color:var(--text2);margin-bottom:12px;}
+
+/* ── sub metrics ── */
 .sm{margin-bottom:8px;}.sm:last-child{margin-bottom:0;}
-.sm-label{display:flex;justify-content:space-between;font-size:12px;color:var(--text2);margin-bottom:3px;}
-.bar-bg{height:5px;background:var(--border);border-radius:3px;}
-.bar-fill{height:5px;border-radius:3px;}
+.sm-label{display:flex;justify-content:space-between;font-size:11px;color:var(--text2);margin-bottom:4px;}
+.sm-label span:last-child{font-weight:500;color:var(--text);}
+.bar-bg{height:3px;background:rgba(0,0,0,0.08);border-radius:2px;}
+.bar-fill{height:3px;border-radius:2px;}
+.k-biz .bar-fill{background:var(--gold);}
+.k-team .bar-fill{background:var(--green);}
+.k-pers .bar-fill{background:var(--dark);}
 
-/* formula */
-.formula-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:0.75rem 0 1rem;}
-.f-box{padding:6px 13px;border-radius:var(--rad);font-size:14px;font-weight:500;}
-.f-op{font-size:18px;color:var(--text2);}
+/* ── formula ── */
+.formula-wrap{background:var(--surface);border:0.5px solid var(--border);border-radius:var(--rad-lg);padding:1.25rem 1.5rem;margin-bottom:1.5rem;}
+.formula-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+.f-box{padding:7px 14px;border-radius:var(--rad);font-size:13px;font-weight:500;border:0.5px solid var(--border-strong);}
+.f-box.f-neutral{background:var(--surface2);color:var(--text);}
+.f-box.f-gold{background:var(--gold-bg);color:var(--gold);border-color:var(--gold-border);}
+.f-box.f-green{background:var(--green-bg);color:var(--green);border-color:var(--green-border);}
+.f-box.f-dark{background:#E8E8E2;color:#1A1A14;border-color:#C0BEB2;}
+.f-box.f-result{background:var(--text);color:#FFF;border-color:var(--text);}
+.f-op{font-size:16px;color:var(--text3);font-weight:300;}
 
-/* metrics summary */
-.metric-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:1rem;}
-.metric-card{background:var(--bg2);border-radius:var(--rad);padding:.85rem 1rem;}
-.metric-lbl{font-size:12px;color:var(--text2);margin-bottom:3px;}
-.metric-val{font-size:21px;font-weight:500;}
+/* ── conditions ── */
+.cond-list{display:flex;gap:2rem;flex-wrap:wrap;}
+.cond-item{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text);}
+.cond-dot{width:6px;height:6px;border-radius:50%;background:var(--text3);flex-shrink:0;}
 
-/* result */
-.result-block{background:var(--bg2);border-radius:var(--rad-lg);padding:1.25rem 1.5rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;}
-.result-amount{font-size:32px;font-weight:500;white-space:nowrap;}
-.result-lbl{font-size:14px;color:var(--text2);}
-.result-sub{font-size:12px;color:var(--text3);margin-top:3px;}
+/* ── calendar ── */
+.cal{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;}
+.cal-step{padding:14px 16px;border-right:0.5px solid var(--border);position:relative;}
+.cal-step:last-child{border-right:none;}
+.cal-step::before{content:'';position:absolute;top:0;left:16px;right:16px;height:2px;background:var(--border);}
+.cal-step:first-child::before{background:var(--gold);}
+.cal-month{font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--text3);margin-bottom:6px;}
+.cal-desc{font-size:12px;font-weight:500;color:var(--text);line-height:1.4;}
 
-/* sliders & selects */
-.slider-row{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+/* ── row2 ── */
+.row2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px;}
+
+/* ── sliders ── */
+.slider-row{display:flex;align-items:center;gap:10px;margin-bottom:12px;}
 .slider-lbl{font-size:13px;color:var(--text2);min-width:190px;}
-.slider-val{font-size:13px;font-weight:500;min-width:38px;text-align:right;}
-select{border:0.5px solid var(--border2);border-radius:var(--rad);padding:5px 8px;font-size:13px;background:var(--bg);color:var(--text);font-family:var(--font);width:100%;}
-input[type=range]{flex:1;accent-color:#534AB7;}
+.slider-val{font-size:13px;font-weight:600;min-width:52px;text-align:right;color:var(--text);}
+select{border:0.5px solid var(--border-strong);border-radius:var(--rad);padding:6px 9px;font-size:13px;background:var(--surface);color:var(--text);font-family:var(--font);width:100%;appearance:none;background-image:url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5L9 1' stroke='%236B6B58' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center;padding-right:28px;}
+input[type=range]{flex:1;accent-color:var(--text);height:3px;}
+.field-lbl{font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--text3);margin-bottom:6px;}
 
-/* two-col */
-.row2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px;}
+/* ── result ── */
+.result-block{background:var(--text);border-radius:var(--rad-lg);padding:1.5rem 1.75rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-top:1rem;}
+.result-lbl{font-size:12px;color:rgba(255,255,255,.55);font-weight:500;letter-spacing:.04em;text-transform:uppercase;margin-bottom:4px;}
+.result-sub{font-size:13px;color:rgba(255,255,255,.65);margin-top:4px;}
+.result-amount{font-size:36px;font-weight:700;color:#FFF;white-space:nowrap;letter-spacing:-.02em;}
 
-/* table */
+/* ── metrics ── */
+.metric-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:12px;}
+.metric-card{background:var(--surface);border:0.5px solid var(--border);border-radius:var(--rad);padding:.9rem 1rem;}
+.metric-lbl{font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--text3);margin-bottom:5px;}
+.metric-val{font-size:22px;font-weight:600;color:var(--text);}
+
+/* ── table ── */
 table.t{width:100%;font-size:13px;border-collapse:collapse;}
-table.t th{text-align:left;color:var(--text2);font-weight:500;padding:6px 8px;border-bottom:0.5px solid var(--border);}
-table.t td{padding:7px 8px;border-bottom:0.5px solid var(--border);}
+table.t th{text-align:left;color:var(--text3);font-weight:600;font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:6px 10px;border-bottom:0.5px solid var(--border);}
+table.t td{padding:9px 10px;border-bottom:0.5px solid var(--border);color:var(--text);font-size:13px;}
 table.t tr:last-child td{border-bottom:none;}
 
-/* badges */
-.badge{display:inline-block;font-size:11px;font-weight:500;padding:2px 9px;border-radius:20px;}
-.b-blue{background:#B5D4F4;color:#0C447C;}
-.b-green{background:#C0DD97;color:#3B6D11;}
-.b-amber{background:#FAC775;color:#854F0B;}
-.b-red{background:#F7C1C1;color:#A32D2D;}
-.b-gray{background:#D3D1C7;color:#5F5E5A;}
+/* ── badge ── */
+.badge{display:inline-block;font-size:11px;font-weight:600;padding:2px 9px;border-radius:20px;letter-spacing:.02em;}
+.b-green{background:var(--green-bg);color:var(--green);border:0.5px solid var(--green-border);}
+.b-gold{background:var(--gold-bg);color:var(--gold);border:0.5px solid var(--gold-border);}
+.b-amber{background:#FFF0D6;color:#8B5A00;border:0.5px solid #E8BE78;}
+.b-red{background:#FAECEC;color:#8B2A2A;border:0.5px solid #DFA5A5;}
+.b-gray{background:#E8E8E2;color:#5A5A4E;border:0.5px solid #C0BEB2;}
+.b-dark{background:#E8E8E2;color:#1A1A14;border:0.5px solid #C0BEB2;}
 
-/* note */
-.note{background:var(--amber-bg);border:0.5px solid var(--amber-border);border-radius:var(--rad);padding:8px 12px;font-size:12px;color:var(--amber-mid);margin-top:10px;display:flex;align-items:flex-start;gap:6px;}
+/* ── note ── */
+.note{background:var(--gold-bg);border:0.5px solid var(--gold-border);border-radius:var(--rad);padding:9px 12px;font-size:12px;color:var(--gold);margin-top:12px;display:flex;align-items:flex-start;gap:7px;line-height:1.5;}
+.note-icon{flex-shrink:0;width:14px;height:14px;margin-top:1px;opacity:.7;}
 
-/* calendar */
-.cal{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;}
-.cal-step{padding:10px 12px;border-right:0.5px solid var(--border);}
-.cal-step:last-child{border-right:none;}
-.cal-month{font-size:11px;color:var(--text2);margin-bottom:3px;}
-.cal-desc{font-size:12px;font-weight:500;}
-
-/* conditions */
-.cond-list{display:flex;gap:1.5rem;flex-wrap:wrap;}
-.cond-item{display:flex;align-items:center;gap:6px;font-size:13px;}
+/* ── comparison card ── */
+.compare-row{display:grid;grid-template-columns:1fr 1fr;gap:0;}
+.compare-col{padding:1rem 1.25rem;}
+.compare-col:first-child{border-right:0.5px solid var(--border);}
+.compare-tag{display:inline-block;font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:2px 8px;border-radius:20px;margin-bottom:8px;}
+.compare-title{font-size:14px;font-weight:600;margin-bottom:4px;}
+.compare-desc{font-size:12px;color:var(--text2);line-height:1.5;}
 
 hr{border:none;border-top:0.5px solid var(--border);margin:12px 0;}
 
 @media(max-width:600px){
-  .k-grid,.row2,.metric-grid,.cal{grid-template-columns:1fr;}
+  header h1{font-size:28px;}
+  .k-grid,.row2,.metric-grid,.cal,.compare-row{grid-template-columns:1fr;}
+  .compare-col:first-child{border-right:none;border-bottom:0.5px solid var(--border);}
   .cal-step{border-right:none;border-bottom:0.5px solid var(--border);}
   .cal-step:last-child{border-bottom:none;}
   .formula-row{gap:6px;}
-  .slider-lbl{min-width:140px;}
+  .slider-lbl{min-width:130px;}
+  header{padding:2rem 0 1.5rem;}
 }
 </style>
 </head>
@@ -124,7 +165,8 @@ hr{border:none;border-top:0.5px solid var(--border);margin:12px 0;}
 <div class="wrap">
 
 <header>
-  <h1>Годовая премия ИТ-блока</h1>
+  <div class="header-brand">Sminex &nbsp;·&nbsp; ИТ Департамент</div>
+  <h1>Годовая премия</h1>
   <p>Концепция и механизм расчёта с учётом специфики девелоперского бизнеса</p>
 </header>
 
@@ -138,16 +180,18 @@ hr{border:none;border-top:0.5px solid var(--border);margin:12px 0;}
 <div id="tab-system" class="tab-panel active">
 
   <div class="section-label">Формула расчёта</div>
-  <div class="formula-row">
-    <div class="f-box" style="background:#f1efe8;color:#2c2c2a;">Целевой бонус</div>
-    <span class="f-op">×</span>
-    <div class="f-box" style="background:var(--blue-bg);color:var(--blue-dark);">К (бизнес)</div>
-    <span class="f-op">×</span>
-    <div class="f-box" style="background:var(--green-bg);color:var(--green-dark);">К (ит-блок)</div>
-    <span class="f-op">×</span>
-    <div class="f-box" style="background:var(--purple-bg);color:var(--purple-dark);">К (личный)</div>
-    <span class="f-op">=</span>
-    <div class="f-box" style="background:#EAF3DE;color:#173404;">Годовая премия</div>
+  <div class="formula-wrap">
+    <div class="formula-row">
+      <div class="f-box f-neutral">Целевой бонус</div>
+      <span class="f-op">×</span>
+      <div class="f-box f-gold">К&thinsp;(бизнес)</div>
+      <span class="f-op">×</span>
+      <div class="f-box f-green">К&thinsp;(ит-блок)</div>
+      <span class="f-op">×</span>
+      <div class="f-box f-dark">К&thinsp;(личный)</div>
+      <span class="f-op">=</span>
+      <div class="f-box f-result">Годовая премия</div>
+    </div>
   </div>
 
   <div class="k-grid">
@@ -155,35 +199,35 @@ hr{border:none;border-top:0.5px solid var(--border);margin:12px 0;}
       <div class="k-weight">Вес 35%</div>
       <div class="k-title">К (бизнес)</div>
       <div class="k-sub">Результат компании</div>
-      <div class="sm"><div class="sm-label"><span>План продаж</span><span>40%</span></div><div class="bar-bg"><div class="bar-fill" style="width:40%;background:var(--blue-mid);"></div></div></div>
-      <div class="sm"><div class="sm-label"><span>Ввод объектов в срок</span><span>35%</span></div><div class="bar-bg"><div class="bar-fill" style="width:35%;background:var(--blue-mid);"></div></div></div>
-      <div class="sm"><div class="sm-label"><span>EBITDA / рентабельность</span><span>25%</span></div><div class="bar-bg"><div class="bar-fill" style="width:25%;background:var(--blue-mid);"></div></div></div>
+      <div class="sm"><div class="sm-label"><span>План продаж</span><span>40%</span></div><div class="bar-bg"><div class="bar-fill" style="width:40%"></div></div></div>
+      <div class="sm"><div class="sm-label"><span>Ввод объектов в срок</span><span>35%</span></div><div class="bar-bg"><div class="bar-fill" style="width:35%"></div></div></div>
+      <div class="sm"><div class="sm-label"><span>EBITDA / рентабельность</span><span>25%</span></div><div class="bar-bg"><div class="bar-fill" style="width:25%"></div></div></div>
     </div>
     <div class="k-block k-team">
       <div class="k-weight">Вес 35%</div>
       <div class="k-title">К (ит-блок)</div>
       <div class="k-sub">Результат ИТ как функции</div>
-      <div class="sm"><div class="sm-label"><span>Выполнение дорожной карты</span><span>30%</span></div><div class="bar-bg"><div class="bar-fill" style="width:30%;background:var(--green-mid);"></div></div></div>
-      <div class="sm"><div class="sm-label"><span>Uptime критичных систем</span><span>25%</span></div><div class="bar-bg"><div class="bar-fill" style="width:25%;background:var(--green-mid);"></div></div></div>
-      <div class="sm"><div class="sm-label"><span>Удовлетворённость заказчиков</span><span>25%</span></div><div class="bar-bg"><div class="bar-fill" style="width:25%;background:var(--green-mid);"></div></div></div>
-      <div class="sm"><div class="sm-label"><span>Исполнение бюджета ИТ</span><span>20%</span></div><div class="bar-bg"><div class="bar-fill" style="width:20%;background:var(--green-mid);"></div></div></div>
+      <div class="sm"><div class="sm-label"><span>Выполнение дорожной карты</span><span>30%</span></div><div class="bar-bg"><div class="bar-fill" style="width:30%"></div></div></div>
+      <div class="sm"><div class="sm-label"><span>Uptime критичных систем</span><span>25%</span></div><div class="bar-bg"><div class="bar-fill" style="width:25%"></div></div></div>
+      <div class="sm"><div class="sm-label"><span>Удовлетворённость заказчиков</span><span>25%</span></div><div class="bar-bg"><div class="bar-fill" style="width:25%"></div></div></div>
+      <div class="sm"><div class="sm-label"><span>Исполнение бюджета ИТ</span><span>20%</span></div><div class="bar-bg"><div class="bar-fill" style="width:20%"></div></div></div>
     </div>
     <div class="k-block k-pers">
       <div class="k-weight">Вес 30%</div>
       <div class="k-title">К (личный)</div>
       <div class="k-sub">Индивидуальный performance</div>
-      <div class="sm"><div class="sm-label"><span>Достижение личных OKR</span><span>50%</span></div><div class="bar-bg"><div class="bar-fill" style="width:50%;background:var(--purple-mid);"></div></div></div>
-      <div class="sm"><div class="sm-label"><span>Компетенции / поведение</span><span>30%</span></div><div class="bar-bg"><div class="bar-fill" style="width:30%;background:var(--purple-mid);"></div></div></div>
-      <div class="sm"><div class="sm-label"><span>Вклад в команду</span><span>20%</span></div><div class="bar-bg"><div class="bar-fill" style="width:20%;background:var(--purple-mid);"></div></div></div>
+      <div class="sm"><div class="sm-label"><span>Достижение личных OKR</span><span>50%</span></div><div class="bar-bg"><div class="bar-fill" style="width:50%"></div></div></div>
+      <div class="sm"><div class="sm-label"><span>Компетенции / поведение</span><span>30%</span></div><div class="bar-bg"><div class="bar-fill" style="width:30%"></div></div></div>
+      <div class="sm"><div class="sm-label"><span>Вклад в команду</span><span>20%</span></div><div class="bar-bg"><div class="bar-fill" style="width:20%"></div></div></div>
     </div>
   </div>
 
   <div class="section-label">Условия выплаты</div>
-  <div class="card">
+  <div class="card" style="margin-bottom:1.5rem;">
     <div class="cond-list">
-      <div class="cond-item"><i class="ti ti-calendar" style="color:var(--text2);font-size:16px;" aria-hidden="true"></i><span>Отработано ≥ 6 месяцев в году</span></div>
-      <div class="cond-item"><i class="ti ti-shield-check" style="color:var(--text2);font-size:16px;" aria-hidden="true"></i><span>Нет дисциплинарных взысканий</span></div>
-      <div class="cond-item"><i class="ti ti-user-check" style="color:var(--text2);font-size:16px;" aria-hidden="true"></i><span>Оценка К(личный) > 0</span></div>
+      <div class="cond-item"><div class="cond-dot"></div><span>Отработано ≥ 6 месяцев в году</span></div>
+      <div class="cond-item"><div class="cond-dot"></div><span>Нет дисциплинарных взысканий</span></div>
+      <div class="cond-item"><div class="cond-dot"></div><span>Оценка К(личный) > 0</span></div>
     </div>
   </div>
 
@@ -202,7 +246,7 @@ hr{border:none;border-top:0.5px solid var(--border);margin:12px 0;}
 <!-- ═══ TAB: CALCULATOR ═══ -->
 <div id="tab-calc" class="tab-panel">
 
-  <div class="row2" style="margin-bottom:1rem;">
+  <div class="row2" style="margin-bottom:12px;">
     <div class="card" style="margin-bottom:0;">
       <div class="section-label">Параметры сотрудника</div>
       <div class="slider-row">
@@ -215,8 +259,8 @@ hr{border:none;border-top:0.5px solid var(--border);margin:12px 0;}
         <input type="range" id="months" min="1" max="5" step="0.5" value="2" oninput="calc()">
         <span class="slider-val" id="months-out">2</span>
       </div>
-      <div style="margin-bottom:10px;">
-        <div style="font-size:13px;color:var(--text2);margin-bottom:5px;">Личная оценка</div>
+      <div>
+        <div class="field-lbl">Личная оценка</div>
         <select id="personal" onchange="calc()">
           <option value="1.3">Exceeds — значительно выше ожиданий</option>
           <option value="1.15" selected>Strong — выше ожиданий</option>
@@ -228,8 +272,8 @@ hr{border:none;border-top:0.5px solid var(--border);margin:12px 0;}
     </div>
     <div class="card" style="margin-bottom:0;">
       <div class="section-label">Коэффициенты периода</div>
-      <div style="margin-bottom:12px;">
-        <div style="font-size:13px;color:var(--text2);margin-bottom:5px;">К (бизнес) — выполнение плана компании</div>
+      <div style="margin-bottom:14px;">
+        <div class="field-lbl">К (бизнес) — план компании</div>
         <select id="kbiz" onchange="calc()">
           <option value="1.2">≥ 110% плана → 1.2</option>
           <option value="1.0" selected>100–109% → 1.0</option>
@@ -239,11 +283,11 @@ hr{border:none;border-top:0.5px solid var(--border);margin:12px 0;}
         </select>
       </div>
       <div>
-        <div style="font-size:13px;color:var(--text2);margin-bottom:5px;">К (ит-блок) — результат ИТ-функции</div>
-        <input type="range" id="kit" min="0.5" max="1.3" step="0.05" value="1.0" oninput="calc()" style="width:100%;margin-bottom:4px;">
-        <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--text2);">
+        <div class="field-lbl">К (ит-блок) — результат ИТ-функции</div>
+        <input type="range" id="kit" min="0.5" max="1.3" step="0.05" value="1.0" oninput="calc()" style="width:100%;margin-bottom:6px;">
+        <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--text3);">
           <span>0.5 — слабый год</span>
-          <span id="kit-out" style="font-weight:500;color:var(--text);">1.0</span>
+          <span id="kit-out" style="font-weight:600;color:var(--text);">1.0</span>
           <span>1.3 — отличный год</span>
         </div>
       </div>
@@ -252,14 +296,14 @@ hr{border:none;border-top:0.5px solid var(--border);margin:12px 0;}
 
   <div class="card">
     <div class="section-label">Расчёт</div>
-    <div class="formula-row">
-      <div class="f-box" id="f-target" style="background:#f1efe8;color:#2c2c2a;">300 000 ₽</div>
+    <div class="formula-row" style="margin-bottom:0;">
+      <div class="f-box f-neutral" id="f-target">300 000 ₽</div>
       <span class="f-op">×</span>
-      <div class="f-box" id="f-biz" style="background:var(--blue-bg);color:var(--blue-dark);">1.0</div>
+      <div class="f-box f-gold" id="f-biz">1.0</div>
       <span class="f-op">×</span>
-      <div class="f-box" id="f-it" style="background:var(--green-bg);color:var(--green-dark);">1.0</div>
+      <div class="f-box f-green" id="f-it">1.0</div>
       <span class="f-op">×</span>
-      <div class="f-box" id="f-pers" style="background:var(--purple-bg);color:var(--purple-dark);">1.15</div>
+      <div class="f-box f-dark" id="f-pers">1.15</div>
       <span class="f-op">=</span>
     </div>
     <div class="result-block">
@@ -274,15 +318,15 @@ hr{border:none;border-top:0.5px solid var(--border);margin:12px 0;}
   <div class="metric-grid">
     <div class="metric-card">
       <div class="metric-lbl">Целевой бонус</div>
-      <div class="metric-val" id="m-target" style="color:#444441;">—</div>
+      <div class="metric-val" id="m-target">—</div>
     </div>
     <div class="metric-card">
       <div class="metric-lbl">Итоговый коэффициент</div>
-      <div class="metric-val" id="m-k" style="color:var(--purple-mid);">—</div>
+      <div class="metric-val" id="m-k">—</div>
     </div>
     <div class="metric-card">
       <div class="metric-lbl">В пересчёте на месяц</div>
-      <div class="metric-val" id="m-mo" style="color:var(--green-mid);">—</div>
+      <div class="metric-val" id="m-mo">—</div>
     </div>
   </div>
 
@@ -298,23 +342,26 @@ hr{border:none;border-top:0.5px solid var(--border);margin:12px 0;}
           <thead><tr><th>Выполнение плана</th><th>Коэффициент</th></tr></thead>
           <tbody>
             <tr><td>≥ 110%</td><td><span class="badge b-green">1.2</span></td></tr>
-            <tr><td>100–109%</td><td><span class="badge b-blue">1.0</span></td></tr>
+            <tr><td>100–109%</td><td><span class="badge b-dark">1.0</span></td></tr>
             <tr><td>90–99%</td><td><span class="badge b-amber">0.8</span></td></tr>
             <tr><td>80–89%</td><td><span class="badge b-red">0.6</span></td></tr>
             <tr><td>&lt; 80%</td><td><span class="badge b-gray">0.3</span></td></tr>
           </tbody>
         </table>
-        <div class="note"><i class="ti ti-info-circle" style="font-size:14px;flex-shrink:0;margin-top:1px;" aria-hidden="true"></i>Задаёт потолок бонусного фонда для всего ИТ-блока</div>
+        <div class="note">
+          <svg class="note-icon" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="currentColor" stroke-width="1.2"/><path d="M7 6.5v3.5M7 4.5v.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+          Задаёт потолок бонусного фонда для всего ИТ-блока
+        </div>
       </div>
 
-      <div class="section-label" style="margin-top:1rem;">Шкала К (личный)</div>
+      <div class="section-label" style="margin-top:1.25rem;">Шкала К (личный)</div>
       <div class="card">
         <table class="t">
           <thead><tr><th>Оценка</th><th>Коэффициент</th></tr></thead>
           <tbody>
             <tr><td>Exceeds — значительно выше</td><td><span class="badge b-green">1.3</span></td></tr>
-            <tr><td>Strong — выше ожиданий</td><td><span class="badge b-blue">1.15</span></td></tr>
-            <tr><td>Meets — соответствует уровню</td><td><span class="badge b-blue">1.0</span></td></tr>
+            <tr><td>Strong — выше ожиданий</td><td><span class="badge b-dark">1.15</span></td></tr>
+            <tr><td>Meets — соответствует уровню</td><td><span class="badge b-dark">1.0</span></td></tr>
             <tr><td>Developing — ниже ожиданий</td><td><span class="badge b-amber">0.6</span></td></tr>
             <tr><td>Unsatisfactory</td><td><span class="badge b-gray">0 — нет бонуса</span></td></tr>
           </tbody>
@@ -334,20 +381,23 @@ hr{border:none;border-top:0.5px solid var(--border);margin:12px 0;}
             <tr><td>Руководитель ЦЭ / кластера</td><td>3–4 оклада</td></tr>
           </tbody>
         </table>
-        <div class="note"><i class="ti ti-info-circle" style="font-size:14px;flex-shrink:0;margin-top:1px;" aria-hidden="true"></i>Фиксируется в начале года, закрепляется в трудовом договоре или приложении к нему</div>
+        <div class="note">
+          <svg class="note-icon" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="currentColor" stroke-width="1.2"/><path d="M7 6.5v3.5M7 4.5v.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+          Фиксируется в начале года, закрепляется в трудовом договоре
+        </div>
       </div>
 
-      <div class="section-label" style="margin-top:1rem;">Квартальная vs Годовая</div>
-      <div class="card">
-        <div style="font-size:13px;color:var(--text2);margin-bottom:10px;">Две премии не дублируют, а дополняют друг друга:</div>
-        <div style="margin-bottom:8px;">
-          <div style="font-size:13px;font-weight:500;margin-bottom:2px;">Квартальная</div>
-          <div style="font-size:12px;color:var(--text2);">Закрытие задач, операционный ритм, тактика</div>
-        </div>
-        <hr>
-        <div>
-          <div style="font-size:13px;font-weight:500;margin-bottom:2px;">Годовая</div>
-          <div style="font-size:12px;color:var(--text2);">Стратегический вклад, надёжность систем, удовлетворённость бизнеса</div>
+      <div class="section-label" style="margin-top:1.25rem;">Квартальная vs Годовая</div>
+      <div class="card" style="padding:0;overflow:hidden;">
+        <div class="compare-row">
+          <div class="compare-col">
+            <span class="compare-tag" style="background:#E8E8E2;color:#5A5A4E;border:0.5px solid #C0BEB2;">Квартальная</span>
+            <div class="compare-desc">Закрытие задач, операционный ритм, тактика</div>
+          </div>
+          <div class="compare-col">
+            <span class="compare-tag" style="background:var(--text);color:#FFF;">Годовая</span>
+            <div class="compare-desc">Стратегический вклад, надёжность систем, удовлетворённость бизнеса</div>
+          </div>
         </div>
       </div>
     </div>
@@ -367,11 +417,11 @@ function showTab(id, btn) {
 function fmt(n) { return Math.round(n).toLocaleString('ru-RU') + ' ₽'; }
 
 function calc() {
-  const salary  = +document.getElementById('salary').value;
-  const months  = +document.getElementById('months').value;
-  const kbiz    = +document.getElementById('kbiz').value;
-  const kit     = +document.getElementById('kit').value;
-  const kpers   = +document.getElementById('personal').value;
+  const salary = +document.getElementById('salary').value;
+  const months = +document.getElementById('months').value;
+  const kbiz   = +document.getElementById('kbiz').value;
+  const kit    = +document.getElementById('kit').value;
+  const kpers  = +document.getElementById('personal').value;
 
   document.getElementById('salary-out').textContent = Math.round(salary).toLocaleString('ru-RU');
   document.getElementById('months-out').textContent = months;
@@ -390,15 +440,14 @@ function calc() {
   if (kpers === 0) {
     document.getElementById('result-amount').textContent = '0 ₽';
     document.getElementById('result-sub').textContent    = 'Оценка Unsatisfactory — выплата не производится';
-    document.getElementById('m-k').textContent  = '0×';
-    document.getElementById('m-mo').textContent = '—';
+    document.getElementById('m-k').textContent           = '0×';
+    document.getElementById('m-mo').textContent          = '—';
   } else {
     document.getElementById('result-amount').textContent = fmt(bonus);
     document.getElementById('result-sub').textContent    = pct + '% от целевого бонуса';
-    document.getElementById('m-k').textContent  = totalK + '×';
-    document.getElementById('m-mo').textContent = fmt(bonus / 12) + '/мес';
+    document.getElementById('m-k').textContent           = totalK + '×';
+    document.getElementById('m-mo').textContent          = fmt(bonus / 12) + '/мес';
   }
-
   document.getElementById('m-target').textContent = fmt(target);
 }
 
