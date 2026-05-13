@@ -364,17 +364,18 @@ hr{border:none;border-top:0.5px solid var(--border);margin:12px 0;}
       <div class="k-weight">Вес 40%</div>
       <div class="k-title">К (ит-блок Q)</div>
       <div class="k-sub">Квартальный результат ИТ</div>
-      <div class="sm"><div class="sm-label"><span>Выполнение задач квартала</span><span>40%</span></div><div class="bar-bg"><div class="bar-fill" style="width:40%"></div></div></div>
-      <div class="sm"><div class="sm-label"><span>Uptime критичных систем</span><span>35%</span></div><div class="bar-bg"><div class="bar-fill" style="width:35%"></div></div></div>
+      <div class="sm"><div class="sm-label"><span>Выполнение дорожной карты</span><span>30%</span></div><div class="bar-bg"><div class="bar-fill" style="width:30%"></div></div></div>
+      <div class="sm"><div class="sm-label"><span>Uptime критичных систем</span><span>25%</span></div><div class="bar-bg"><div class="bar-fill" style="width:25%"></div></div></div>
       <div class="sm"><div class="sm-label"><span>Удовлетворённость заказчиков</span><span>25%</span></div><div class="bar-bg"><div class="bar-fill" style="width:25%"></div></div></div>
+      <div class="sm"><div class="sm-label"><span>Исполнение бюджета ИТ</span><span>20%</span></div><div class="bar-bg"><div class="bar-fill" style="width:20%"></div></div></div>
     </div>
     <div class="k-block k-pers">
       <div class="k-weight">Вес 35%</div>
       <div class="k-title">К (личный Q)</div>
       <div class="k-sub">Личные результаты квартала</div>
-      <div class="sm"><div class="sm-label"><span>Закрытие задач по плану спринта</span><span>50%</span></div><div class="bar-bg"><div class="bar-fill" style="width:50%"></div></div></div>
-      <div class="sm"><div class="sm-label"><span>Качество и отсутствие переработок</span><span>30%</span></div><div class="bar-bg"><div class="bar-fill" style="width:30%"></div></div></div>
-      <div class="sm"><div class="sm-label"><span>Взаимодействие с командой</span><span>20%</span></div><div class="bar-bg"><div class="bar-fill" style="width:20%"></div></div></div>
+      <div class="sm"><div class="sm-label"><span>Выполнение личных KPI</span><span>50%</span></div><div class="bar-bg"><div class="bar-fill" style="width:50%"></div></div></div>
+      <div class="sm"><div class="sm-label"><span>Выполнение ИПР</span><span>30%</span></div><div class="bar-bg"><div class="bar-fill" style="width:30%"></div></div></div>
+      <div class="sm"><div class="sm-label"><span>Утилизация</span><span>20%</span></div><div class="bar-bg"><div class="bar-fill" style="width:20%"></div></div></div>
     </div>
   </div>
 
@@ -435,13 +436,14 @@ hr{border:none;border-top:0.5px solid var(--border);margin:12px 0;}
         </select>
       </div>
       <div>
-        <div class="field-lbl">К (ит-блок Q) — результат ИТ за квартал</div>
-        <input type="range" id="q-kit" min="0.5" max="1.2" step="0.05" value="1.0" oninput="calcQ()" style="width:100%;margin-bottom:6px;">
-        <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--text3);">
-          <span>0.5 — слабый квартал</span>
-          <span id="q-kit-out" style="font-weight:600;color:var(--text);">1.0</span>
-          <span>1.2 — отличный квартал</span>
-        </div>
+        <div class="field-lbl">К (ит-блок Q) — выполнение KPI ИТ-блока</div>
+        <select id="q-kit" onchange="calcQ()">
+          <option value="1.3">≥ 110% KPI → 1.3</option>
+          <option value="1.0" selected>100–109% → 1.0</option>
+          <option value="0.8">90–99% → 0.8</option>
+          <option value="0.6">80–89% → 0.6</option>
+          <option value="0.3">&lt; 80% → 0.3</option>
+        </select>
       </div>
     </div>
   </div>
@@ -614,7 +616,6 @@ function calcQ() {
 
   document.getElementById('q-salary-out').textContent = Math.round(salary).toLocaleString('ru-RU');
   document.getElementById('q-months-out').textContent = months;
-  document.getElementById('q-kit-out').textContent    = kit.toFixed(2);
 
   const target = salary * months;
   const bonus  = target * kbiz * kit * kpers;
