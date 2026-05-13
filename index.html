@@ -284,13 +284,14 @@ hr{border:none;border-top:0.5px solid var(--border);margin:12px 0;}
         </select>
       </div>
       <div>
-        <div class="field-lbl">К (ит-блок) — результат ИТ-функции</div>
-        <input type="range" id="kit" min="0.5" max="1.3" step="0.05" value="1.0" oninput="calc()" style="width:100%;margin-bottom:6px;">
-        <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--text3);">
-          <span>0.5 — слабый год</span>
-          <span id="kit-out" style="font-weight:600;color:var(--text);">1.0</span>
-          <span>1.3 — отличный год</span>
-        </div>
+        <div class="field-lbl">К (ит-блок) — выполнение KPI ИТ-блока</div>
+        <select id="kit" onchange="calc()">
+          <option value="1.3">≥ 110% KPI → 1.3</option>
+          <option value="1.0" selected>100–109% → 1.0</option>
+          <option value="0.8">90–99% → 0.8</option>
+          <option value="0.6">80–89% → 0.6</option>
+          <option value="0.3">&lt; 80% → 0.3</option>
+        </select>
       </div>
     </div>
   </div>
@@ -577,7 +578,6 @@ function calc() {
 
   document.getElementById('salary-out').textContent = Math.round(salary).toLocaleString('ru-RU');
   document.getElementById('months-out').textContent = months;
-  document.getElementById('kit-out').textContent    = kit.toFixed(2);
 
   const target = salary * months;
   const bonus  = target * kbiz * kit * kpers;
