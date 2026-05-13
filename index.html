@@ -488,12 +488,12 @@ hr{border:none;border-top:0.5px solid var(--border);margin:12px 0;}
 
 <!-- ═══ TAB: SCALES ═══ -->
 <div id="tab-scales" class="tab-panel">
-  <div class="row2">
+  <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-bottom:12px;">
     <div>
       <div class="section-label">Шкала К (бизнес)</div>
-      <div class="card">
+      <div class="card" style="margin-bottom:0;">
         <table class="t">
-          <thead><tr><th>Выполнение плана</th><th>Коэффициент</th></tr></thead>
+          <thead><tr><th>Выполнение плана</th><th>К</th></tr></thead>
           <tbody>
             <tr><td>≥ 110%</td><td><span class="badge b-green">1.2</span></td></tr>
             <tr><td>100–109%</td><td><span class="badge b-dark">1.0</span></td></tr>
@@ -504,57 +504,62 @@ hr{border:none;border-top:0.5px solid var(--border);margin:12px 0;}
         </table>
         <div class="note">
           <svg class="note-icon" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="currentColor" stroke-width="1.2"/><path d="M7 6.5v3.5M7 4.5v.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
-          Задаёт потолок бонусного фонда для всего ИТ-блока
+          Потолок бонусного фонда для всего ИТ-блока
         </div>
-      </div>
-
-      <div class="section-label" style="margin-top:1.25rem;">Шкала К (личный)</div>
-      <div class="card">
-        <table class="t">
-          <thead><tr><th>Оценка</th><th>Коэффициент</th></tr></thead>
-          <tbody>
-            <tr><td>Exceeds — значительно выше</td><td><span class="badge b-green">1.3</span></td></tr>
-            <tr><td>Strong — выше ожиданий</td><td><span class="badge b-dark">1.15</span></td></tr>
-            <tr><td>Meets — соответствует уровню</td><td><span class="badge b-dark">1.0</span></td></tr>
-            <tr><td>Developing — ниже ожиданий</td><td><span class="badge b-amber">0.6</span></td></tr>
-            <tr><td>Unsatisfactory</td><td><span class="badge b-gray">0 — нет бонуса</span></td></tr>
-          </tbody>
-        </table>
       </div>
     </div>
     <div>
-      <div class="section-label">Целевые бонусы по уровням</div>
-      <div class="card">
+      <div class="section-label">Шкала К (ит-блок)</div>
+      <div class="card" style="margin-bottom:0;">
         <table class="t">
-          <thead><tr><th>Должность</th><th>Целевой бонус</th></tr></thead>
+          <thead><tr><th>Выполнение KPI</th><th>К</th></tr></thead>
           <tbody>
-            <tr><td>Разработчик</td><td>4 оклада</td></tr>
-            <tr><td>Аналитик</td><td>4 оклада</td></tr>
-            <tr><td>QA инженер</td><td>4 оклада</td></tr>
-            <tr><td>Team Lead</td><td>4 оклада</td></tr>
-            <tr><td>Руководитель кластера</td><td>4 оклада</td></tr>
-            <tr><td>Руководитель ЦЭ</td><td>4 оклада</td></tr>
+            <tr><td>≥ 110%</td><td><span class="badge b-green">1.3</span></td></tr>
+            <tr><td>100–109%</td><td><span class="badge b-dark">1.0</span></td></tr>
+            <tr><td>90–99%</td><td><span class="badge b-amber">0.8</span></td></tr>
+            <tr><td>80–89%</td><td><span class="badge b-red">0.6</span></td></tr>
+            <tr><td>&lt; 80%</td><td><span class="badge b-gray">0.3</span></td></tr>
           </tbody>
         </table>
         <div class="note">
           <svg class="note-icon" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="currentColor" stroke-width="1.2"/><path d="M7 6.5v3.5M7 4.5v.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
-          Фиксируется в начале года, закрепляется в трудовом договоре
+          Применяется и в годовой, и в квартальной премии
         </div>
       </div>
+    </div>
+    <div>
+      <div class="section-label">Шкала К (личный)</div>
+      <div class="card" style="margin-bottom:0;">
+        <table class="t">
+          <thead><tr><th>Оценка</th><th>К</th></tr></thead>
+          <tbody>
+            <tr><td>Exceeds</td><td><span class="badge b-green">1.3</span></td></tr>
+            <tr><td>Strong</td><td><span class="badge b-dark">1.15</span></td></tr>
+            <tr><td>Meets</td><td><span class="badge b-dark">1.0</span></td></tr>
+            <tr><td>Developing</td><td><span class="badge b-amber">0.6</span></td></tr>
+            <tr><td>Unsatisfactory</td><td><span class="badge b-gray">0</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
 
-      <div class="section-label" style="margin-top:1.25rem;">Квартальная vs Годовая</div>
-      <div class="card" style="padding:0;overflow:hidden;">
-        <div class="compare-row">
-          <div class="compare-col">
-            <span class="compare-tag" style="background:#E8E8E2;color:#5A5A4E;border:0.5px solid #C0BEB2;">Квартальная</span>
-            <div class="compare-desc">Закрытие задач, операционный ритм, тактика</div>
-          </div>
-          <div class="compare-col">
-            <span class="compare-tag" style="background:var(--text);color:#FFF;">Годовая</span>
-            <div class="compare-desc">Стратегический вклад, надёжность систем, удовлетворённость бизнеса</div>
-          </div>
-        </div>
-      </div>
+  <div class="section-label">Целевые бонусы по должностям</div>
+  <div class="card">
+    <table class="t">
+      <thead><tr><th>Должность</th><th>Целевой бонус</th></tr></thead>
+      <tbody>
+        <tr><td>Разработчик</td><td>4 оклада</td></tr>
+        <tr><td>Аналитик</td><td>4 оклада</td></tr>
+        <tr><td>QA инженер</td><td>4 оклада</td></tr>
+        <tr><td>Team Lead</td><td>4 оклада</td></tr>
+        <tr><td>Руководитель кластера</td><td>4 оклада</td></tr>
+        <tr><td>Руководитель ЦЭ</td><td>4 оклада</td></tr>
+      </tbody>
+    </table>
+    <div class="note">
+      <svg class="note-icon" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="currentColor" stroke-width="1.2"/><path d="M7 6.5v3.5M7 4.5v.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+      Фиксируется в начале года, закрепляется в трудовом договоре
     </div>
   </div>
 </div>
